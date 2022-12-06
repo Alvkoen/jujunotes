@@ -11,6 +11,18 @@
 		6A723226293FA27400EA6D83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A723225293FA27400EA6D83 /* ContentView.swift */; };
 		6A723228293FA27500EA6D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A723227293FA27500EA6D83 /* Assets.xcassets */; };
 		6A72322C293FA27500EA6D83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A72322B293FA27500EA6D83 /* Preview Assets.xcassets */; };
+		6AE4172B293FA2FA001E1E7E /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE41729293FA2FA001E1E7E /* Workout.swift */; };
+		6AE4172C293FA2FA001E1E7E /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */; };
+		6AE41734293FA321001E1E7E /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */; };
+		6AE41735293FA321001E1E7E /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */; };
+		6AE41736293FA321001E1E7E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172F293FA321001E1E7E /* CardView.swift */; };
+		6AE41737293FA321001E1E7E /* ExerciseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE41730293FA321001E1E7E /* ExerciseEditView.swift */; };
+		6AE41738293FA321001E1E7E /* WorkoutStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE41731293FA321001E1E7E /* WorkoutStorage.swift */; };
+		6AE41739293FA321001E1E7E /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE41732293FA321001E1E7E /* ExerciseCardView.swift */; };
+		6AE4173A293FA321001E1E7E /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE41733293FA321001E1E7E /* WorkoutsView.swift */; };
+		6AE4173C293FA340001E1E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AE4173B293FA340001E1E7E /* Assets.xcassets */; };
+		6AE4173E293FA4D7001E1E7E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4173D293FA4D7001E1E7E /* ErrorView.swift */; };
+		6AE41740293FA526001E1E7E /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4173F293FA526001E1E7E /* ErrorWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +32,18 @@
 		6A723227293FA27500EA6D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A723229293FA27500EA6D83 /* jujunotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = jujunotes.entitlements; sourceTree = "<group>"; };
 		6A72322B293FA27500EA6D83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6AE41729293FA2FA001E1E7E /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
+		6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
+		6AE4172F293FA321001E1E7E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		6AE41730293FA321001E1E7E /* ExerciseEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseEditView.swift; sourceTree = "<group>"; };
+		6AE41731293FA321001E1E7E /* WorkoutStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutStorage.swift; sourceTree = "<group>"; };
+		6AE41732293FA321001E1E7E /* ExerciseCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
+		6AE41733293FA321001E1E7E /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
+		6AE4173B293FA340001E1E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AE4173D293FA4D7001E1E7E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		6AE4173F293FA526001E1E7E /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +76,21 @@
 		6A723222293FA27400EA6D83 /* jujunotes */ = {
 			isa = PBXGroup;
 			children = (
+				6AE4173B293FA340001E1E7E /* Assets.xcassets */,
+				6AE4172F293FA321001E1E7E /* CardView.swift */,
+				6AE41732293FA321001E1E7E /* ExerciseCardView.swift */,
+				6AE41730293FA321001E1E7E /* ExerciseEditView.swift */,
+				6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */,
+				6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */,
+				6AE41731293FA321001E1E7E /* WorkoutStorage.swift */,
+				6AE41733293FA321001E1E7E /* WorkoutsView.swift */,
+				6AE41728293FA2FA001E1E7E /* models */,
 				6A723223293FA27400EA6D83 /* jujunotesApp.swift */,
 				6A723225293FA27400EA6D83 /* ContentView.swift */,
 				6A723227293FA27500EA6D83 /* Assets.xcassets */,
 				6A723229293FA27500EA6D83 /* jujunotes.entitlements */,
 				6A72322A293FA27500EA6D83 /* Preview Content */,
+				6AE4173D293FA4D7001E1E7E /* ErrorView.swift */,
 			);
 			path = jujunotes;
 			sourceTree = "<group>";
@@ -67,6 +101,16 @@
 				6A72322B293FA27500EA6D83 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6AE41728293FA2FA001E1E7E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6AE41729293FA2FA001E1E7E /* Workout.swift */,
+				6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */,
+				6AE4173F293FA526001E1E7E /* ErrorWrapper.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A72322C293FA27500EA6D83 /* Preview Assets.xcassets in Resources */,
+				6AE4173C293FA340001E1E7E /* Assets.xcassets in Resources */,
 				6A723228293FA27500EA6D83 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +184,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE41740293FA526001E1E7E /* ErrorWrapper.swift in Sources */,
+				6AE41736293FA321001E1E7E /* CardView.swift in Sources */,
 				6A723226293FA27400EA6D83 /* ContentView.swift in Sources */,
+				6AE41737293FA321001E1E7E /* ExerciseEditView.swift in Sources */,
+				6AE41734293FA321001E1E7E /* WorkoutDetailView.swift in Sources */,
+				6AE41735293FA321001E1E7E /* WorkoutEditView.swift in Sources */,
+				6AE4173A293FA321001E1E7E /* WorkoutsView.swift in Sources */,
+				6AE4172C293FA2FA001E1E7E /* WorkoutStore.swift in Sources */,
+				6AE4173E293FA4D7001E1E7E /* ErrorView.swift in Sources */,
+				6AE41739293FA321001E1E7E /* ExerciseCardView.swift in Sources */,
+				6AE41738293FA321001E1E7E /* WorkoutStorage.swift in Sources */,
 				6A723224293FA27400EA6D83 /* jujunotesApp.swift in Sources */,
+				6AE4172B293FA2FA001E1E7E /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +325,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Jujunotes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -287,10 +345,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvkoen.jujunotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +367,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Jujunotes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -325,10 +387,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvkoen.jujunotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
