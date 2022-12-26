@@ -25,7 +25,8 @@ class WorkoutStore: ObservableObject {
                 case .failure(let error):
                     continuation.resume(throwing: error)
                 case .success(let workoutsSaved):
-                    continuation.resume(returning: workoutsSaved)
+                    let sortedWorkouts = workoutsSaved.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+                    continuation.resume(returning: sortedWorkouts)
                 }
             }
         }

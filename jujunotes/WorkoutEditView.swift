@@ -23,13 +23,13 @@ struct WorkoutEditView: View {
             }
             Section(header: Text("Exercises")) {
                 ForEach($data.exercises) { exercise in
-                        ExerciseCardView(exercise: exercise, data: $data)
+                    ExercisesEditView(exercise: exercise)
                 }
                 .onDelete { indices in
                     data.exercises.remove(atOffsets: indices)
                 }
                 HStack {
-                    ExerciseEditView(exercise: $newExerciseData, data: $data)
+                    ExerciseAddView(exercise: $newExerciseData, data: $data)
                 }
             }
         }
@@ -41,3 +41,5 @@ struct WorkoutEditView_Previews: PreviewProvider {
         WorkoutEditView(data: .constant(Workout.sampleData[0].data))
     }
 }
+
+

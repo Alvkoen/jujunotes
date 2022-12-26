@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkoutsView: View {
     @Binding var workouts: [Workout]
+    @Binding var selectedTab: Tab
+    
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewWorkoutView = false
     @State private var newWorkoutData = Workout.Data()
@@ -47,6 +49,9 @@ struct WorkoutsView: View {
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
+        .onChange(of: selectedTab) { tab in
+            if selectedTab != .workoutsTab { saveAction() }
+        }
         .navigationTitle("My workouts")
         .toolbar {
             Button(action: {
@@ -65,7 +70,9 @@ struct WorkoutsView: View {
 struct WorkoutsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutsView(workouts: .constant(Workout.sampleData), saveAction: {})
+            WorkoutsView(workouts: .constant(Workout.sampleData),
+                        selectedTab: .constant(Tab.workoutsTab),
+                         saveAction: {})
         }
     }
 }
