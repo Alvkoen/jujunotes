@@ -21,35 +21,47 @@ struct Workout: Identifiable {
     }
 }
 
-extension Workout: Codable {
-    struct Exercise: Identifiable, Codable {
-        let id: UUID
-        var name: String
-        var reps: Int
-        var sets: Int
-        var weight: Double
-        
-        init(id: UUID = UUID(), name: String, reps: Int, sets: Int, weight: Double) {
-            self.id = id
-            self.name = name
-            self.reps = reps
-            self.sets = sets
-            self.weight = weight
-        }
-        
-        init() {
-            self.id = UUID()
-            self.name = ""
-            self.reps = 0
-            self.sets = 0
-            self.weight = 0
-        }
-        
-        func weightAsString() -> String {
-            return String(format: "%g", self.weight)
-        }
+struct Template: Identifiable {
+    let id: UUID
+    var title: String
+    var exercises: [Exercise]
+    
+    init(id: UUID = UUID(), title: String, exercises: [Exercise]) {
+        self.id = id
+        self.title = title
+        self.exercises = exercises
+    }
+}
+
+struct Exercise: Identifiable, Codable {
+    let id: UUID
+    var name: String
+    var reps: Int
+    var sets: Int
+    var weight: Double
+    
+    init(id: UUID = UUID(), name: String, reps: Int, sets: Int, weight: Double) {
+        self.id = id
+        self.name = name
+        self.reps = reps
+        self.sets = sets
+        self.weight = weight
     }
     
+    init() {
+        self.id = UUID()
+        self.name = ""
+        self.reps = 0
+        self.sets = 0
+        self.weight = 0
+    }
+    
+    func weightAsString() -> String {
+        return String(format: "%g", self.weight)
+    }
+}
+
+extension Workout: Codable {
     struct Data {
         var title: String = ""
         var date: Date = Date.now
@@ -59,6 +71,11 @@ extension Workout: Codable {
     //Data object from Workout
     var data: Data {
         Data(title: title, date: date, exercises: exercises)
+    }
+    
+    //Template object from Workout
+    var template: Template {
+        return Template(id: UUID(), title: title, exercises: exercises)
     }
     
     //Workout constructor from data
@@ -101,5 +118,3 @@ extension Workout {
                 exercises: [])
     ]
 }
-
-

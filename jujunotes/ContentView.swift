@@ -10,6 +10,7 @@ import SwiftUI
 enum Tab: String {
     case workoutsTab
     case templatesTab
+    case statsTab
 }
 
 struct ContentView: View {
@@ -45,15 +46,26 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.top)
             .tabItem {
                 Label("Workouts", systemImage: "dumbbell")
-                }
+            }
             .tag(Tab.workoutsTab)
             
-            Text("Tab 2")
-                .edgesIgnoringSafeArea(.top)
-                .tabItem {
-                    Label("Templates", systemImage: "book")
-                }
-                .tag(Tab.templatesTab)
+            NavigationView {
+               TemplatesView()
+            }
+            .edgesIgnoringSafeArea(.top)
+            .tabItem {
+                Label("Templates", systemImage: "book")
+            }
+            .tag(Tab.templatesTab)
+            
+            NavigationView {
+                StatsView()
+            }
+            .edgesIgnoringSafeArea(.top)
+            .tabItem {
+                Label("Statistics", systemImage: "chart.line.uptrend.xyaxis")
+            }
+            .tag(Tab.statsTab)
         }
         .onAppear
         {

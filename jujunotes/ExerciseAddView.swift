@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ExerciseAddView: View {
-    @Binding var exercise: Workout.Exercise
+    @Binding var exercise: Exercise
     @Binding var data: Workout.Data
     
     var body: some View {
         ExercisesEditView(exercise: $exercise)
         Button(action: {
             withAnimation {
-                let newExercise = Workout.Exercise(id: exercise.id,
+                let newExercise = Exercise(id: exercise.id,
                                                 name: exercise.name,
                                                 reps: exercise.reps,
                                                 sets: exercise.sets,
                                                 weight: exercise.weight)
                 data.exercises.append(newExercise)
-                exercise = Workout.Exercise(name: "", reps: 0, sets: 0, weight: 0)
+                exercise = Exercise(name: "", reps: 0, sets: 0, weight: 0)
             }
         }) {
             Image(systemName: "plus.circle.fill")

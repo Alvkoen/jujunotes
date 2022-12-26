@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Eventually this data should be stored in a database and fetched from backend
 class WorkoutStore: ObservableObject {
     @Published var workouts: [Workout] = []
     
