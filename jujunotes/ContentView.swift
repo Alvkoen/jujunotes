@@ -24,7 +24,7 @@ struct ContentView: View {
                 WorkoutsView(workouts: $store.workouts, selectedTab: $selectedTab) {
                     Task {
                         do {
-                            try await WorkoutStore.save(workouts: store.workouts)
+                            try await WorkoutStore.saveWorkout(workouts: store.workouts)
                         } catch {
                             errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
@@ -32,13 +32,13 @@ struct ContentView: View {
                 }
                 .task {
                     do {
-                        store.workouts = try await WorkoutStore.load()
+                        store.workouts = try await WorkoutStore.loadWorkout()
                     } catch {
-                        errorWrapper = ErrorWrapper(error: error, guidance: "Jujunotes will load sample data and continue.")
+                        errorWrapper = ErrorWrapper(error: error, guidance: "Jujunotes was not able to load data.")
                     }
                 }
                 .sheet(item: $errorWrapper, onDismiss: {
-                    store.workouts = Workout.sampleData
+                    store.workouts = []
                 }) { wrapper in
                     ErrorView(errorWrapper: wrapper)
                 }
@@ -50,7 +50,27 @@ struct ContentView: View {
             .tag(Tab.workoutsTab)
             
             NavigationView {
-               TemplatesView()
+                TemplatesView(templates: $store.templates, selectedTab: $selectedTab){
+                    Task {
+                        do {
+                            try await WorkoutStore.saveTemplates(templates: store.templates)
+                        } catch {
+                            errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
+                        }
+                    }
+                }
+                .task {
+                    do {
+                        store.templates = try await WorkoutStore.loadTemplates()
+                    } catch {
+                        errorWrapper = ErrorWrapper(error: error, guidance: "Jujunotes was not able to load data.")
+                    }
+                }
+                .sheet(item: $errorWrapper, onDismiss: {
+                    store.templates = []
+                }) { wrapper in
+                    ErrorView(errorWrapper: wrapper)
+                }
             }
             .edgesIgnoringSafeArea(.top)
             .tabItem {

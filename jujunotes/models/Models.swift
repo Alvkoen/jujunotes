@@ -21,7 +21,7 @@ struct Workout: Identifiable {
     }
 }
 
-struct Template: Identifiable {
+struct Template: Identifiable, Codable {
     let id: UUID
     var title: String
     var exercises: [Exercise]
@@ -115,6 +115,18 @@ extension Workout {
                 exercises: []),
         Workout(title: "A very long title. It's so huuuuuuge - who would call a workout like this?",
                 date: Calendar.current.date(byAdding: .day, value: 2, to: today)!,
+                exercises: [])
+    ]
+}
+
+extension Template {
+    static let sampleData: [Template] =
+    [
+        Template(title: "Lower body", exercises: [
+            Exercise(name: "Leg press", reps: 10, sets: 3, weight: 80.5),
+            Exercise(name: "Leg extenstion", reps: 10, sets: 3, weight: 30)
+        ]),
+        Template(title: "Upper body",
                 exercises: [])
     ]
 }

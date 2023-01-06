@@ -21,7 +21,7 @@ struct WorkoutsView: View {
         List {
             ForEach($workouts) { $workout in
                 NavigationLink(destination: WorkoutDetailView(workout: $workout)) {
-                    CardView(workout: workout)
+                    WorkoutCardView(workout: workout)
                 }
             }.onDelete(perform: delete)
         }

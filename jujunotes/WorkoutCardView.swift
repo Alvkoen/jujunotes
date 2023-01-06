@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct WorkoutCardView: View {
     let workout: Workout
     
     var body: some View {
@@ -26,10 +26,10 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
+struct WorkoutCardView_Previews: PreviewProvider {
     static var workout = Workout.sampleData[1]
     static var previews: some View {
-        CardView(workout: workout)
+        WorkoutCardView(workout: workout)
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }
