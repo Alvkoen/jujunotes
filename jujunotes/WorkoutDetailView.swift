@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkoutDetailView: View {
     
     @Binding var workout: Workout
-    @State private var data = Workout.Data()
+    @State private var data = Data()
     @State private var isPresentingEditView = false
     @State private var isEditingOrder = false
     

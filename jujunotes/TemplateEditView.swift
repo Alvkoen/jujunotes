@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TemplateEditView: View {
     
-    @Binding var data: Template.Data
+    @Binding var data: Data
     @State private var newExerciseData: Exercise = Exercise()
     
     var body: some View {
@@ -24,9 +24,9 @@ struct TemplateEditView: View {
                 .onDelete { indices in
                     data.exercises.remove(atOffsets: indices)
                 }
-//                HStack {
-//                    ExerciseAddView(exercise: $newExerciseData, data: $data)
-//                }
+                HStack {
+                    ExerciseAddView(exercise: $newExerciseData, data: $data)
+                }
             }
         }
     }

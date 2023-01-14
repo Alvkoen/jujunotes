@@ -13,7 +13,7 @@ struct WorkoutsView: View {
     
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewWorkoutView = false
-    @State private var newWorkoutData = Workout.Data()
+    @State private var newWorkoutData = Data()
     let saveAction: ()->Void
 
 
@@ -32,7 +32,7 @@ struct WorkoutsView: View {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Dismiss") {
                                 isPresentingNewWorkoutView = false
-                                newWorkoutData = Workout.Data()
+                                newWorkoutData = Data()
                             }
                         }
                         ToolbarItem(placement: .confirmationAction) {
@@ -40,7 +40,7 @@ struct WorkoutsView: View {
                                 let newWorkout = Workout(data: newWorkoutData)
                                 workouts.append(newWorkout)
                                 isPresentingNewWorkoutView = false
-                                newWorkoutData = Workout.Data()
+                                newWorkoutData = Data()
                             }
                         }
                     }

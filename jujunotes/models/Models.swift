@@ -61,12 +61,13 @@ struct Exercise: Identifiable, Codable {
     }
 }
 
+struct Data {
+    var title: String = ""
+    var date: Date = Date.now
+    var exercises: [Exercise] = []
+}
+
 extension Workout: Codable {
-    struct Data {
-        var title: String = ""
-        var date: Date = Date.now
-        var exercises: [Exercise] = []
-    }
     
     //Data object from Workout
     var data: Data {
@@ -101,12 +102,7 @@ extension Workout: Codable {
 }
 
 extension Template: Codable {
-    struct Data {
-        var title: String = ""
-        var exercises: [Exercise] = []
-    }
-    
-    //Data object from Workout
+    //Data object from Template
     var data: Data {
         Data(title: title, exercises: exercises)
     }

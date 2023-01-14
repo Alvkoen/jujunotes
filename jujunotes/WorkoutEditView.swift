@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutEditView: View {
     
-    @Binding var data: Workout.Data
+    @Binding var data: Data
     @State private var newExerciseData: Exercise = Exercise()
     
     var body: some View {

@@ -10,7 +10,7 @@ import SwiftUI
 struct TemplateDetailView: View {
     
     @Binding var template: Template
-    @State private var data = Template.Data()
+    @State private var data = Data()
     @State private var isPresentingEditView = false
     @State private var isEditingOrder = false
 
