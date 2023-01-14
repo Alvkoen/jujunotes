@@ -10,9 +10,12 @@ import SwiftUI
 struct WorkoutDetailView: View {
     
     @Binding var workout: Workout
+    @Binding var templates: [Template]
     @State private var data = Data()
     @State private var isPresentingEditView = false
     @State private var isEditingOrder = false
+    let saveAction: ()->Void
+
     
     var body: some View {
         List {
@@ -47,7 +50,7 @@ struct WorkoutDetailView: View {
             }
             Section(header: Text("Actions")) {
                 Button {
-                    print("Edit button was tapped")
+                    templateFromWorkout()
                 } label: {
                     Label("Save as template", systemImage: "square.and.arrow.down")
                 }
@@ -93,14 +96,18 @@ struct WorkoutDetailView: View {
     }
     
     func templateFromWorkout() {
-//        let template = Template.init(from: <#T##Decoder#>)
+        let template = Template.init(data: workout.data)
+        templates.append(template)
+        saveAction()
     }
 }
 
 struct WorkoutDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutDetailView(workout: .constant(Workout.sampleData[0]))
+            WorkoutDetailView(workout: .constant(Workout.sampleData[0]),
+                              templates: .constant(Template.sampleData),
+                              saveAction: {})
         }
     }
     

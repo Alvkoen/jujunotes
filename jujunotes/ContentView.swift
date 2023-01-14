@@ -21,10 +21,11 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationView {
-                WorkoutsView(workouts: $store.workouts, selectedTab: $selectedTab) {
+                WorkoutsView(workouts: $store.workouts, templates: $store.templates, selectedTab: $selectedTab) {
                     Task {
                         do {
                             try await WorkoutStore.saveWorkout(workouts: store.workouts)
+                            try await WorkoutStore.saveTemplates(templates: store.templates)
                         } catch {
                             errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
