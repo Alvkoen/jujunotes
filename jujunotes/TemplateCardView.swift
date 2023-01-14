@@ -13,7 +13,7 @@ struct TemplateCardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Label(template.title + " template", systemImage: "book")
+                Label(template.title, systemImage: "book")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityAddTraits(.isHeader)

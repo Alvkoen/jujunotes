@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExerciseCardView: View {
     @Binding var exercise: Exercise
-    @Binding var data: Workout.Data
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,9 +29,8 @@ struct ExerciseCardView: View {
 
 struct ExerciseCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let workout = Workout.sampleData[0]
-        let exercise = workout.exercises[0]
-        ExerciseCardView(exercise: .constant(exercise), data: .constant(workout.data))
+        let exercise = Workout.sampleData[0].exercises[0]
+        ExerciseCardView(exercise: .constant(exercise))
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }

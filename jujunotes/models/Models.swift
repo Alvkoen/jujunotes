@@ -21,7 +21,7 @@ struct Workout: Identifiable {
     }
 }
 
-struct Template: Identifiable, Codable {
+struct Template: Identifiable {
     let id: UUID
     var title: String
     var exercises: [Exercise]
@@ -98,6 +98,35 @@ extension Workout: Codable {
         exercises = data.exercises
     }
     
+}
+
+extension Template: Codable {
+    struct Data {
+        var title: String = ""
+        var exercises: [Exercise] = []
+    }
+    
+    //Data object from Workout
+    var data: Data {
+        Data(title: title, exercises: exercises)
+    }
+    
+    //Template object from Workout
+    var template: Template {
+        return Template(id: UUID(), title: title, exercises: exercises)
+    }
+    
+    //Workout constructor from data
+    init(data: Data) {
+        id = UUID()
+        title = data.title
+        exercises = data.exercises
+    }
+    
+    mutating func update(from data: Data) {
+        title = data.title
+        exercises = data.exercises
+    }
 }
 
 let today: Date = Date.now

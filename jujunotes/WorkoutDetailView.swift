@@ -34,7 +34,7 @@ struct WorkoutDetailView: View {
                         .font(.caption)
                 } else {
                     ForEach($workout.exercises) { exercise in
-                        ExerciseCardView(exercise: exercise, data: $data)
+                        ExerciseCardView(exercise: exercise)
                     }
                     .onDelete(perform: delete)
                     .onMove(perform: move)

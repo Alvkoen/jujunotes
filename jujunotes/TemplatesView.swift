@@ -21,21 +21,22 @@ struct TemplatesView: View {
             Text("Create a template from existing workout")
                 .font(.caption)
         }
-        List {
-            ForEach($templates) { $template in
-                NavigationLink(destination: TemplateDetailView(template: $template)) {
-                    TemplateCardView(template: template)
-                }
-            }.onDelete(perform: delete)
+        else {
+            List {
+                ForEach($templates) { $template in
+                    NavigationLink(destination: TemplateDetailView(template: $template)) {
+                        TemplateCardView(template: template)
+                    }
+                }.onDelete(perform: delete)
+            }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
+            }
+            .onChange(of: selectedTab) { tab in
+                if selectedTab != .templatesTab { saveAction() }
+            }
+            .navigationTitle("My templates")
         }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
-        }
-        .onChange(of: selectedTab) { tab in
-            if selectedTab != .templatesTab { saveAction() }
-        }
-        .navigationTitle("My templates")
-
     }
     
     func delete(at offsets: IndexSet) {
