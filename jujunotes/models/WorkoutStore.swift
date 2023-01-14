@@ -34,7 +34,6 @@ class WorkoutStore: ObservableObject {
         }
     }
     
-    
     static func loadWorkout(completion: @escaping (Result<[Workout], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {

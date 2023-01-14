@@ -45,6 +45,13 @@ struct WorkoutDetailView: View {
                     }
                 }
             }
+            Section(header: Text("Actions")) {
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Label("Save as template", systemImage: "square.and.arrow.down")
+                }
+            }
         }
         .navigationTitle(workout.title)
         .toolbar {
@@ -83,6 +90,10 @@ struct WorkoutDetailView: View {
         withAnimation {
             isEditingOrder = false
         }
+    }
+    
+    func templateFromWorkout() {
+//        let template = Template.init(from: <#T##Decoder#>)
     }
 }
 
