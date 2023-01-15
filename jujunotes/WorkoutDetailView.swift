@@ -15,7 +15,7 @@ struct WorkoutDetailView: View {
     @State private var isPresentingEditView = false
     @State private var isEditingOrder = false
     let saveAction: ()->Void
-
+    
     
     var body: some View {
         List {

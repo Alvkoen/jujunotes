@@ -62,15 +62,18 @@ extension Workout {
     static let sampleData: [Workout] =
     [
         Workout(title: "Lower body", date: Date.now, exercises: [
-            Exercise(name: "Leg press", reps: 10, sets: 3, weight: 80.5),
-            Exercise(name: "Leg extenstion", reps: 10, sets: 3, weight: 30)
+            Exercise(name: "Leg press", order: 0, isSuperset: false, sets: [
+                Set(name: "Set 1", reps: 10, weight: 80.5, order: 0),
+                Set(name: "Set 2", reps: 10, weight: 30, order: 1)
+            ]),
+            Exercise(name: "Leg superset", order: 0, isSuperset: true, sets: [
+                Set(name: "Leg extenstion", reps: 10, weight: 80.5, order: 0),
+                Set(name: "Leg curl", reps: 10, weight: 30, order: 1)
+            ])
         ]),
         Workout(title: "Upper body",
                 date: Calendar.current.date(byAdding: .day, value: 1, to: today)!,
                 exercises: []),
-        Workout(title: "A very long title. It's so huuuuuuge - who would call a workout like this?",
-                date: Calendar.current.date(byAdding: .day, value: 2, to: today)!,
-                exercises: [])
     ]
 }
 

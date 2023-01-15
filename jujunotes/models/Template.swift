@@ -47,8 +47,10 @@ extension Template {
     static let sampleData: [Template] =
     [
         Template(title: "Lower body", exercises: [
-            Exercise(name: "Leg press", reps: 10, sets: 3, weight: 80.5),
-            Exercise(name: "Leg extenstion", reps: 10, sets: 3, weight: 30)
+            Exercise(name: "Leg press", order: 0, isSuperset: false, sets: [
+                Set(name: "Set 1", reps: 10, weight: 80.5, order: 0),
+                Set(name: "Set 2", reps: 10, weight: 30, order: 1)
+            ])
         ]),
         Template(title: "Upper body",
                  exercises: [])

@@ -10,27 +10,30 @@ import SwiftUI
 struct ExercisesEditView: View {
     
     @Binding var exercise: Exercise
-
     
     var body: some View {
         VStack {
-            TextField("New Exercise name", text: $exercise.name)
-            HStack {
-                Group {
-                    Text("Reps")
-                    TextField("Reps", value: $exercise.reps, formatter: NumberFormatter())
+            Group {
+                TextField("Exercise name", text: $exercise.name)
+            }
+            ForEach($exercise.sets) { set in
+                HStack {
+                    Group {
+                        TextField("Set name", text: set.name)
+                    }
+                    Spacer()
+                    Group {
+                        Text("Reps")
+                        TextField("Reps", value: set.reps, formatter: NumberFormatter())
+                    }
+                    Spacer()
+                    Group {
+                        Text("Wgt")
+                        TextField("Wgt", value: set.weight, formatter: NumberFormatter())
+                    }
+                    Spacer()
+                    //todo add set copy button
                 }
-                Spacer()
-                Group {
-                    Text("Sets")
-                    TextField("Sets", value: $exercise.sets, formatter: NumberFormatter())
-                }
-                Spacer()
-                Group {
-                    Text("Wgt")
-                    TextField("Wgt", value: $exercise.weight, formatter: NumberFormatter())
-                }
-                Spacer()
             }
         }
     }

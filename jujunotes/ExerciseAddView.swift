@@ -13,24 +13,33 @@ struct ExerciseAddView: View {
     
     var body: some View {
         ExercisesEditView(exercise: $exercise)
+        
         Button(action: {
             withAnimation {
                 let newExercise = Exercise(id: exercise.id,
-                                                name: exercise.name,
-                                                reps: exercise.reps,
-                                                sets: exercise.sets,
-                                                weight: exercise.weight)
+                                           name: exercise.name,
+                                           order: exercise.order,
+                                           isSuperset: exercise.isSuperset,
+                                           sets: exercise.sets)
                 data.exercises.append(newExercise)
-                exercise = Exercise(name: "", reps: 0, sets: 0, weight: 0)
+                exercise = Exercise.init()
             }
         }) {
             Image(systemName: "plus.circle.fill")
         }
-        .disabled(exercise.name.isEmpty
-                  || exercise.reps == 0
-                  || exercise.sets == 0
-                  || exercise.weight == 0
-        )
+        .disabled(exercise.name.isEmpty || !setsAreFilled(sets: exercise.sets))
+    }
+    
+    func setsAreFilled(sets: [Set]) -> Bool {
+        for set in sets {
+            if (set.name.isEmpty ||
+                set.reps == 0 ||
+                set.weight == 0)
+            {
+               return false
+            }
+        }
+        return true
     }
 }
 
