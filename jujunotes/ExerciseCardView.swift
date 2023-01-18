@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ExerciseCardView: View {
     @Binding var exercise: Exercise
+    var isEdit = false
+    @State private var isPresentingEditView = false
+    
     
     var body: some View {
         //todo add superset indication
@@ -23,7 +26,13 @@ struct ExerciseCardView: View {
                             .fill(Color.purple)
                         Text("Superset")
                             .foregroundColor(.white)
-                    }.frame(width: 80, height: 20)
+                    }.frame(width: 70, height: 10)
+                }
+                Spacer()
+                if (isEdit == true) {
+                    Button("Edit sets") {
+                        isPresentingEditView = true
+                    }
                 }
             }
             Spacer()
@@ -40,6 +49,23 @@ struct ExerciseCardView: View {
             ForEach(exercise.sets) { set in
                 SetViewTableRow(set: set)
             }
+            .sheet(isPresented: $isPresentingEditView) {
+                NavigationView {
+                    ExercisesEditView(exercise: $exercise)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") {
+                                    isPresentingEditView = false
+                                }
+                            }
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Done") {
+                                    isPresentingEditView = false
+                                }
+                            }
+                        }
+                }
+            }
         }
         .padding([.top, .bottom])
     }
@@ -48,8 +74,8 @@ struct ExerciseCardView: View {
 
 struct ExerciseCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let exercise = Workout.sampleData[0].exercises[0]
-        ExerciseCardView(exercise: .constant(exercise))
+        let exercise = Workout.sampleData[0].exercises[1]
+        ExerciseCardView(exercise: .constant(exercise), isEdit: true)
             .previewLayout(.fixed(width: 400, height: 90))
     }
 }

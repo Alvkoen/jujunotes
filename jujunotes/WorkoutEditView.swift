@@ -22,10 +22,12 @@ struct WorkoutEditView: View {
                 )
             }
             Section(header: Text("Exercises")) {
-                ForEach($data.exercises) { exercise in
-                    ExercisesEditView(exercise: exercise).padding().padding(.leading)
+                List {
+                    ForEach($data.exercises) { exercise in
+                        ExerciseCardView(exercise: exercise, isEdit: true).padding(.leading)
+                    }.onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
+            
                 HStack {
                     ExerciseAddView(exercise: $newExerciseData, data: $data).padding(.leading)
                 }

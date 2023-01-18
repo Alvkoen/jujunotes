@@ -14,24 +14,30 @@ struct ExercisesEditView: View {
     var body: some View {
         VStack {
             Group {
-                TextField("Exercise name", text: $exercise.name).font(Font.title2)
-            
-                HStack() {
-                    Text("Set")
-                        .frame(width: 100)
-                    Text("Reps")
-                        .frame(width: 100)
-                    Text("Wgt")
-                        .frame(width: 100)
-                    Spacer()
+                HStack {
+                    TextField("Exercise name", text: $exercise.name).font(Font.title2)
                 }
-                .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
-                
-                ForEach($exercise.sets) { set in
-                    SetEditTableRow(set: set, sets: $exercise.sets)
+                List {
+                    HStack() {
+                        Text("Set")
+                            .frame(width: 100)
+                        Text("Reps")
+                            .frame(width: 100)
+                        Text("Wgt")
+                            .frame(width: 100)
+                        Spacer()
+                    }
+                    .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
+                    ForEach($exercise.sets) { set in
+                        SetEditTableRow(set: set)
+                    }.onDelete(perform: delete)
                 }
             }
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        exercise.sets.remove(atOffsets: offsets)
     }
     
 }
