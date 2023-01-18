@@ -65,21 +65,27 @@ struct WorkoutDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                WorkoutEditView(data: $data)
-                    .navigationTitle(workout.title)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                isPresentingEditView = false
+                GeometryReader { geometry in
+                    ScrollView {
+                        WorkoutEditView(data: $data)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .navigationTitle(workout.title)
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Cancel") {
+                                        isPresentingEditView = false
+                                    }
+                                }
+                                ToolbarItem(placement: .confirmationAction) {
+                                    Button("Done") {
+                                        isPresentingEditView = false
+                                        workout.update(from: data)
+                                    }
+                                }
                             }
-                        }
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
-                                isPresentingEditView = false
-                                workout.update(from: data)
-                            }
-                        }
                     }
+                }
+                .navigationBarTitle("Sheet")
             }
         }
     }

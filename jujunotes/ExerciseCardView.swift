@@ -12,8 +12,9 @@ struct ExerciseCardView: View {
     
     var body: some View {
         //todo add superset indication
+        
         VStack(alignment: .leading) {
-            HStack {
+            HStack() {
                 Label(exercise.name, systemImage: "dumbbell")
                 Spacer()
                 if (exercise.isSuperset) {
@@ -26,24 +27,28 @@ struct ExerciseCardView: View {
                 }
             }
             Spacer()
+            HStack() {
+                Text("Set")
+                    .frame(minWidth: 50, maxWidth: .infinity, alignment: .leading)
+                Text("Reps")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                Text("Wgt")
+                    .frame( maxWidth: .infinity, alignment: .trailing)
+            }
+            .alignmentGuide(HorizontalAlignment.leading) { d in d[HorizontalAlignment.leading] }
+            Spacer()
             ForEach(exercise.sets) { set in
-                HStack {
-                    Text("\(set.name)")
-                    Spacer()
-                    Text("Reps: \(set.reps)")
-                    Spacer()
-                    Text("Wgt: \(set.weightAsString()) kg")
-                    Spacer()
-                }
+                SetViewTableRow(set: set)
             }
         }
         .padding([.top, .bottom])
     }
+    
 }
 
 struct ExerciseCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let exercise = Workout.sampleData[0].exercises[1]
+        let exercise = Workout.sampleData[0].exercises[0]
         ExerciseCardView(exercise: .constant(exercise))
             .previewLayout(.fixed(width: 400, height: 90))
     }

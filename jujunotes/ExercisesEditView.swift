@@ -15,28 +15,24 @@ struct ExercisesEditView: View {
         VStack {
             Group {
                 TextField("Exercise name", text: $exercise.name)
-            }
-            ForEach($exercise.sets) { set in
-                HStack {
-                    Group {
-                        TextField("Set name", text: set.name)
-                    }
+            
+                HStack() {
+                    Text("Set")
+                        .frame(width: 100)
+                    Text("Reps")
+                        .frame(width: 100)
+                    Text("Wgt")
+                        .frame(width: 100)
                     Spacer()
-                    Group {
-                        Text("Reps")
-                        TextField("Reps", value: set.reps, formatter: NumberFormatter())
-                    }
-                    Spacer()
-                    Group {
-                        Text("Wgt")
-                        TextField("Wgt", value: set.weight, formatter: NumberFormatter())
-                    }
-                    Spacer()
-                    //todo add set copy button
+                }.alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
+                
+                ForEach($exercise.sets) { set in
+                    SetEditTableRow(set: set, sets: $exercise.sets)
                 }
             }
         }
     }
+    
 }
 
 struct ExercisesEditView_Previews: PreviewProvider {

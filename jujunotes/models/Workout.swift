@@ -63,8 +63,8 @@ extension Workout {
     [
         Workout(title: "Lower body", date: Date.now, exercises: [
             Exercise(name: "Leg press", order: 0, isSuperset: false, sets: [
-                Set(name: "Set 1", reps: 10, weight: 80.5, order: 0),
-                Set(name: "Set 2", reps: 10, weight: 30, order: 1)
+                Set(name: "1", reps: 10, weight: 80.5, order: 0),
+                Set(name: "2", reps: 10, weight: 30, order: 1)
             ]),
             Exercise(name: "Leg superset", order: 0, isSuperset: true, sets: [
                 Set(name: "Leg extenstion", reps: 10, weight: 80.5, order: 0),

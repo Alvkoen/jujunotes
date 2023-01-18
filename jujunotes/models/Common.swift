@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Set: Identifiable, Codable {
+struct Set: Identifiable, Codable, Equatable {
     let id: UUID
     var name: String
     var reps: Int
@@ -24,7 +24,7 @@ struct Set: Identifiable, Codable {
     
     init() {
         self.id = UUID()
-        self.name = "Set 1"
+        self.name = ""
         self.reps = 0
         self.weight = 0
         self.order = 0
@@ -64,4 +64,3 @@ struct Data {
     var date: Date = Date.now
     var exercises: [Exercise] = []
 }
-
