@@ -21,6 +21,10 @@ struct SetEditTableRow: View {
                     .frame(width: 80)
                 TextField("Wgt", value: $set.weight, formatter: NumberFormatter())
                     .frame(width: 80)
+                Button {
+                } label: {
+                    Label("", systemImage: "minus.circle.fill")
+                }
                 Spacer()
             }
             .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }

@@ -12,22 +12,25 @@ struct ExerciseAddView: View {
     @Binding var data: Data
     
     var body: some View {
-        ExercisesEditView(exercise: $exercise)
-        
-        Button(action: {
-            withAnimation {
-                let newExercise = Exercise(id: exercise.id,
-                                           name: exercise.name,
-                                           order: exercise.order,
-                                           isSuperset: exercise.isSuperset,
-                                           sets: exercise.sets)
-                data.exercises.append(newExercise)
-                exercise = Exercise.init()
+        VStack {
+            ExercisesEditView(exercise: $exercise)
+            
+            Button(action: {
+                withAnimation {
+                    let newExercise = Exercise(id: exercise.id,
+                                               name: exercise.name,
+                                               order: exercise.order,
+                                               isSuperset: exercise.isSuperset,
+                                               sets: exercise.sets)
+                    data.exercises.append(newExercise)
+                    exercise = Exercise.init()
+                }
+            }) {
+                Label("Add exercise", systemImage: "plus.circle.fill")
             }
-        }) {
-            Image(systemName: "plus.circle.fill")
+            .padding(.horizontal)
+            .disabled(exercise.name.isEmpty || !setsAreFilled(sets: exercise.sets))
         }
-        .disabled(exercise.name.isEmpty || !setsAreFilled(sets: exercise.sets))
     }
     
     func setsAreFilled(sets: [Set]) -> Bool {

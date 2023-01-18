@@ -23,16 +23,18 @@ struct WorkoutEditView: View {
             }
             Section(header: Text("Exercises")) {
                 ForEach($data.exercises) { exercise in
-                    ExercisesEditView(exercise: exercise)
+                    ExercisesEditView(exercise: exercise).padding().padding(.leading)
                 }
-                .onDelete { indices in
-                    data.exercises.remove(atOffsets: indices)
-                }
+                .onDelete(perform: delete)
                 HStack {
-                    ExerciseAddView(exercise: $newExerciseData, data: $data)
+                    ExerciseAddView(exercise: $newExerciseData, data: $data).padding(.leading)
                 }
             }
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        data.exercises.remove(atOffsets: offsets)
     }
 }
 

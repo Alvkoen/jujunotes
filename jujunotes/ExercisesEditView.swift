@@ -14,7 +14,7 @@ struct ExercisesEditView: View {
     var body: some View {
         VStack {
             Group {
-                TextField("Exercise name", text: $exercise.name)
+                TextField("Exercise name", text: $exercise.name).font(Font.title2)
             
                 HStack() {
                     Text("Set")
@@ -24,7 +24,8 @@ struct ExercisesEditView: View {
                     Text("Wgt")
                         .frame(width: 100)
                     Spacer()
-                }.alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
+                }
+                .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
                 
                 ForEach($exercise.sets) { set in
                     SetEditTableRow(set: set, sets: $exercise.sets)
