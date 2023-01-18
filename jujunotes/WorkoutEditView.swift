@@ -27,10 +27,7 @@ struct WorkoutEditView: View {
                         ExerciseCardView(exercise: exercise, isEdit: true).padding(.leading)
                     }.onDelete(perform: delete)
                 }
-            
-                HStack {
-                    ExerciseAddView(exercise: $newExerciseData, data: $data).padding(.leading)
-                }
+                ExerciseAddView(exercise: $newExerciseData, data: $data).padding(.leading)
             }
         }
     }

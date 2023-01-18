@@ -13,25 +13,21 @@ struct ExercisesEditView: View {
     
     var body: some View {
         VStack {
-            Group {
-                HStack {
-                    TextField("Exercise name", text: $exercise.name).font(Font.title2)
+            TextField("Exercise name", text: $exercise.name).font(Font.title2).padding()
+            List {
+                HStack() {
+                    Text("Set")
+                        .frame(width: 100)
+                    Text("Reps")
+                        .frame(width: 100)
+                    Text("Wgt")
+                        .frame(width: 100)
+                    Spacer()
                 }
-                List {
-                    HStack() {
-                        Text("Set")
-                            .frame(width: 100)
-                        Text("Reps")
-                            .frame(width: 100)
-                        Text("Wgt")
-                            .frame(width: 100)
-                        Spacer()
-                    }
-                    .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
-                    ForEach($exercise.sets) { set in
-                        SetEditTableRow(set: set)
-                    }.onDelete(perform: delete)
-                }
+                .alignmentGuide(HorizontalAlignment.center) { d in d[HorizontalAlignment.center] }
+                ForEach($exercise.sets) { set in
+                    SetEditTableRow(set: set)
+                }.onDelete(perform: delete)
             }
         }
     }
