@@ -19,7 +19,7 @@ struct TemplateEditView: View {
             }
             Section(header: Text("Exercises")) {
                 ForEach($data.exercises) { exercise in
-                    ExercisesEditView(exercise: exercise)
+                    SetsEditView(exercise: exercise, isNewExercise: false)
                 }
                 .onDelete { indices in
                     data.exercises.remove(atOffsets: indices)

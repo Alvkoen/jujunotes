@@ -12,7 +12,6 @@
 		6A72322C293FA27500EA6D83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A72322B293FA27500EA6D83 /* Preview Assets.xcassets */; };
 		6A7692BF2976C9F300A4C51E /* SetViewTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7692BE2976C9F300A4C51E /* SetViewTableRow.swift */; };
 		6A7692C12976CB0C00A4C51E /* SetEditTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7692C02976CB0C00A4C51E /* SetEditTableRow.swift */; };
-		6A7692C42977208900A4C51E /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 6A7692C32977208900A4C51E /* GridStack */; };
 		6AADD8B02972BD4B0042EDB2 /* TemplateEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AADD8AF2972BD4B0042EDB2 /* TemplateEditView.swift */; };
 		6AADD8B22972C8F60042EDB2 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AADD8B12972C8F60042EDB2 /* Common.swift */; };
 		6AADD8B42972CA8F0042EDB2 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AADD8B32972CA8F0042EDB2 /* Workout.swift */; };
@@ -21,7 +20,8 @@
 		6ABB03D12959DCDC006718FE /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB03D02959DCDC006718FE /* StatsView.swift */; };
 		6ABB03D329684120006718FE /* TemplateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB03D229684120006718FE /* TemplateDetailView.swift */; };
 		6ABB03D529684279006718FE /* TemplateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB03D429684279006718FE /* TemplateCardView.swift */; };
-		6AD5309A294600BF00CC550F /* ExercisesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD53099294600BF00CC550F /* ExercisesEditView.swift */; };
+		6AD2F0472986759100B70D7D /* SetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2F0462986759100B70D7D /* SetAddView.swift */; };
+		6AD5309A294600BF00CC550F /* SetsEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD53099294600BF00CC550F /* SetsEditView.swift */; };
 		6AE4172C293FA2FA001E1E7E /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */; };
 		6AE41734293FA321001E1E7E /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */; };
 		6AE41735293FA321001E1E7E /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */; };
@@ -52,7 +52,8 @@
 		6ABB03D02959DCDC006718FE /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		6ABB03D229684120006718FE /* TemplateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateDetailView.swift; sourceTree = "<group>"; };
 		6ABB03D429684279006718FE /* TemplateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCardView.swift; sourceTree = "<group>"; };
-		6AD53099294600BF00CC550F /* ExercisesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEditView.swift; sourceTree = "<group>"; };
+		6AD2F0462986759100B70D7D /* SetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAddView.swift; sourceTree = "<group>"; };
+		6AD53099294600BF00CC550F /* SetsEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsEditView.swift; sourceTree = "<group>"; };
 		6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 		6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A7692C42977208900A4C51E /* GridStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,29 +98,16 @@
 		6A723222293FA27400EA6D83 /* jujunotes */ = {
 			isa = PBXGroup;
 			children = (
-				6AE4173B293FA340001E1E7E /* Assets.xcassets */,
+				6AD2F04D29867CFE00B70D7D /* model */,
+				6AD2F04C29867CD100B70D7D /* view */,
+				6A723229293FA27500EA6D83 /* jujunotes.entitlements */,
 				6A723225293FA27400EA6D83 /* ContentView.swift */,
 				6AE4173D293FA4D7001E1E7E /* ErrorView.swift */,
-				6AE41730293FA321001E1E7E /* ExerciseAddView.swift */,
-				6AE41732293FA321001E1E7E /* ExerciseCardView.swift */,
-				6AD53099294600BF00CC550F /* ExercisesEditView.swift */,
-				6A723229293FA27500EA6D83 /* jujunotes.entitlements */,
 				6A723223293FA27400EA6D83 /* jujunotesApp.swift */,
-				6AE41728293FA2FA001E1E7E /* models */,
-				6A72322A293FA27500EA6D83 /* Preview Content */,
 				6ABB03D02959DCDC006718FE /* StatsView.swift */,
-				6ABB03D429684279006718FE /* TemplateCardView.swift */,
-				6ABB03D229684120006718FE /* TemplateDetailView.swift */,
-				6AADD8AF2972BD4B0042EDB2 /* TemplateEditView.swift */,
-				6ABB03CE2959D95A006718FE /* TemplatesView.swift */,
-				6AE4172F293FA321001E1E7E /* WorkoutCardView.swift */,
-				6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */,
-				6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */,
-				6AE41731293FA321001E1E7E /* WorkoutStorage.swift */,
-				6AE41733293FA321001E1E7E /* WorkoutsView.swift */,
+				6AE4173B293FA340001E1E7E /* Assets.xcassets */,
+				6A72322A293FA27500EA6D83 /* Preview Content */,
 				6AE4174129408E75001E1E7E /* Assets.xcassets */,
-				6A7692BE2976C9F300A4C51E /* SetViewTableRow.swift */,
-				6A7692C02976CB0C00A4C51E /* SetEditTableRow.swift */,
 			);
 			path = jujunotes;
 			sourceTree = "<group>";
@@ -133,7 +120,61 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6AE41728293FA2FA001E1E7E /* models */ = {
+		6AD2F04829867C3E00B70D7D /* workout */ = {
+			isa = PBXGroup;
+			children = (
+				6AE4172F293FA321001E1E7E /* WorkoutCardView.swift */,
+				6AE4172D293FA321001E1E7E /* WorkoutDetailView.swift */,
+				6AE4172E293FA321001E1E7E /* WorkoutEditView.swift */,
+				6AE41731293FA321001E1E7E /* WorkoutStorage.swift */,
+				6AE41733293FA321001E1E7E /* WorkoutsView.swift */,
+			);
+			path = workout;
+			sourceTree = "<group>";
+		};
+		6AD2F04929867C4900B70D7D /* exercise */ = {
+			isa = PBXGroup;
+			children = (
+				6AE41730293FA321001E1E7E /* ExerciseAddView.swift */,
+				6AE41732293FA321001E1E7E /* ExerciseCardView.swift */,
+			);
+			path = exercise;
+			sourceTree = "<group>";
+		};
+		6AD2F04A29867C5000B70D7D /* set */ = {
+			isa = PBXGroup;
+			children = (
+				6AD2F0462986759100B70D7D /* SetAddView.swift */,
+				6A7692C02976CB0C00A4C51E /* SetEditTableRow.swift */,
+				6AD53099294600BF00CC550F /* SetsEditView.swift */,
+				6A7692BE2976C9F300A4C51E /* SetViewTableRow.swift */,
+			);
+			path = set;
+			sourceTree = "<group>";
+		};
+		6AD2F04B29867C8C00B70D7D /* template */ = {
+			isa = PBXGroup;
+			children = (
+				6ABB03D429684279006718FE /* TemplateCardView.swift */,
+				6ABB03D229684120006718FE /* TemplateDetailView.swift */,
+				6AADD8AF2972BD4B0042EDB2 /* TemplateEditView.swift */,
+				6ABB03CE2959D95A006718FE /* TemplatesView.swift */,
+			);
+			path = template;
+			sourceTree = "<group>";
+		};
+		6AD2F04C29867CD100B70D7D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6AD2F04929867C4900B70D7D /* exercise */,
+				6AD2F04A29867C5000B70D7D /* set */,
+				6AD2F04B29867C8C00B70D7D /* template */,
+				6AD2F04829867C3E00B70D7D /* workout */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6AD2F04D29867CFE00B70D7D /* model */ = {
 			isa = PBXGroup;
 			children = (
 				6AE4172A293FA2FA001E1E7E /* WorkoutStore.swift */,
@@ -142,7 +183,7 @@
 				6AADD8B32972CA8F0042EDB2 /* Workout.swift */,
 				6AADD8B52972CABB0042EDB2 /* Template.swift */,
 			);
-			path = models;
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +203,6 @@
 			);
 			name = jujunotes;
 			packageProductDependencies = (
-				6A7692C32977208900A4C51E /* GridStack */,
 			);
 			productName = jujunotes;
 			productReference = 6A723220293FA27400EA6D83 /* jujunotes.app */;
@@ -192,7 +232,6 @@
 			);
 			mainGroup = 6A723217293FA27400EA6D83;
 			packageReferences = (
-				6A7692C22977208900A4C51E /* XCRemoteSwiftPackageReference "GridStack" */,
 			);
 			productRefGroup = 6A723221293FA27400EA6D83 /* Products */;
 			projectDirPath = "";
@@ -222,8 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ABB03D329684120006718FE /* TemplateDetailView.swift in Sources */,
-				6AD5309A294600BF00CC550F /* ExercisesEditView.swift in Sources */,
+				6AD5309A294600BF00CC550F /* SetsEditView.swift in Sources */,
 				6AADD8B42972CA8F0042EDB2 /* Workout.swift in Sources */,
+				6AD2F0472986759100B70D7D /* SetAddView.swift in Sources */,
 				6AE41740293FA526001E1E7E /* ErrorWrapper.swift in Sources */,
 				6AE41736293FA321001E1E7E /* WorkoutCardView.swift in Sources */,
 				6A723226293FA27400EA6D83 /* ContentView.swift in Sources */,
@@ -465,25 +505,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6A7692C22977208900A4C51E /* XCRemoteSwiftPackageReference "GridStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pietropizzi/GridStack";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6A7692C32977208900A4C51E /* GridStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6A7692C22977208900A4C51E /* XCRemoteSwiftPackageReference "GridStack" */;
-			productName = GridStack;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A723218293FA27400EA6D83 /* Project object */;
 }

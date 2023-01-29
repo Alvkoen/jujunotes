@@ -51,7 +51,7 @@ struct ExerciseCardView: View {
             }
             .sheet(isPresented: $isPresentingEditView) {
                 NavigationView {
-                    ExercisesEditView(exercise: $exercise)
+                    SetsEditView(exercise: $exercise, isNewExercise: false)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
                                 Button("Cancel") {

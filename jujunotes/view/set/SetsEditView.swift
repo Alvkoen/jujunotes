@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ExercisesEditView: View {
+struct SetsEditView: View {
     
     @Binding var exercise: Exercise
+    @State private var newSetData: Set = Set()
+    var isNewExercise: Bool
     
     var body: some View {
         VStack {
@@ -28,6 +30,9 @@ struct ExercisesEditView: View {
                 ForEach($exercise.sets) { set in
                     SetEditTableRow(set: set)
                 }.onDelete(perform: delete)
+                if (!isNewExercise) {
+                    SetAddView(set: $newSetData, exercise: $exercise)
+                }
             }
         }
     }
@@ -41,6 +46,6 @@ struct ExercisesEditView: View {
 struct ExercisesEditView_Previews: PreviewProvider {
     static var previews: some View {
         let workout = Workout.sampleData[0]
-        ExercisesEditView(exercise: .constant(workout.exercises[0]))
+        SetsEditView(exercise: .constant(workout.exercises[0]), isNewExercise: false)
     }
 }

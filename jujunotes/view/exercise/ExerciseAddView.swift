@@ -13,7 +13,7 @@ struct ExerciseAddView: View {
     
     var body: some View {
         VStack {
-            ExercisesEditView(exercise: $exercise)
+            SetsEditView(exercise: $exercise, isNewExercise: true)
             
             Button(action: {
                 withAnimation {
